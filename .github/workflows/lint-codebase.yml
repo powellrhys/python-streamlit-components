@@ -1,0 +1,35 @@
+name: Lint Checks
+on:
+  push:
+    branches:
+      - 'feature/**'
+  pull_request:
+    types: [opened]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout codebase
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Setup up Python
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      # Install dependencies
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r dev_requirements.txt
+
+      # Run flake8 checks
+      - name: Run flake8
+        run: flake8 --count --show-source --statistics
+
+      # Lint yaml pipelines
+      - name: Run yamllint
+        run: yamllint -c .yamllint.yml .

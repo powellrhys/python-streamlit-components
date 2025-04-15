@@ -1,3 +1,5 @@
-from .ui_components import hello
+# Import python package
+from .ui_components import configure_page_config
 
-__all__ = ['hello']
+# Export functions to be imported
+__all__ = ['configure_page_config']
