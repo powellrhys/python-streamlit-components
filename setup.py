@@ -11,7 +11,7 @@ setup(
     description='A package that defines reuseable streamlit components',
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
-    url='https://github.com/powelrhys/python-streamlit-components',
+    url='https://github.com/powellrhys/python-streamlit-components',
     classifiers=[
         'Programming Language :: Python :: 3',
     ],
