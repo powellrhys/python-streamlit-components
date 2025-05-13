@@ -4,7 +4,7 @@ import streamlit as st
 import warnings
 
 # Import project dependencies
-from data_functions import (
+from streamlit_components.data_functions import (
     list_blob_files
 )
 
