@@ -72,6 +72,7 @@ def configure_page_config(
 def data_source_badge(
     blob_connection_string: str,
     file_name: str,
+    container_name: str,
     additional_comments: str = ''
 ) -> None:
     """
@@ -94,7 +95,7 @@ def data_source_badge(
 
     # Collect list of blob files
     _, blob_files = list_blob_files(connection_string=blob_connection_string,
-                                    container_name='play-cricket')
+                                    container_name=container_name)
 
     # Filter blob files list to retrieve file of interest and when file was last modified
     last_modified = [file for file in blob_files if file['name'] == file_name][0]['last_modified']
